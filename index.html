@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coop's Handyman Services | Jacob Cooper</title>
+<meta name="description" content="Coop's Handyman Services — Home repairs, property maintenance, fences, tree cleanup, concrete repair, welding and more. Call Jacob Cooper for a free estimate.">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:title" content="Coop's Handyman Services — Jacob Cooper">
+<meta property="og:description" content="Home repairs, fences, tree cleanup, concrete, welding and more. Free estimates. Call or text (740) 243-2932.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#2d3341;        /* roof navy from the card */
+    --navy-soft:#3a4152;
+    --navy-deep:#232833;
+    --gold:#a8873b;        /* CHS gold from the card  */
+    --gold-deep:#8f7330;
+    --gold-light:#c2a355;
+    --steel:#9a9385;       /* tool metal              */
+    --card:#ffffff;
+    --paper:#f4eee3;       /* warm backdrop           */
+    --paper-2:#ece3d4;
+    --ink:#211f1b;         /* near-black card text    */
+    --muted:#6f685c;
+    --line:#e7dcc9;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+
+  body{
+    font-family:'EB Garamond','Georgia',serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.62;
+    font-size:17.5px;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  h1,h2,h3,.serif{font-family:'PT Serif','Georgia',serif;}
+
+  .eyebrow{
+    font-family:'EB Garamond',serif;text-transform:uppercase;
+    letter-spacing:.32em;font-size:12px;font-weight:600;
+  }
+
+  /* ============ HERO — THE CARD ============ */
+  .hero{
+    position:relative;padding:48px 20px 40px;
+    background:
+      radial-gradient(130% 90% at 50% 0%, #ffffff 0%, var(--paper) 55%, var(--paper-2) 100%);
+  }
+  /* faint blueprint texture on the backdrop */
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(45,51,65,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(45,51,65,.035) 1px,transparent 1px);
+    background-size:30px 30px;
+    -webkit-mask-image:radial-gradient(80% 80% at 50% 30%,#000,transparent 80%);
+            mask-image:radial-gradient(80% 80% at 50% 30%,#000,transparent 80%);
+    pointer-events:none;
+  }
+
+  .card{
+    position:relative;z-index:2;max-width:840px;margin:0 auto;
+    background:var(--card);border-radius:14px;
+    padding:44px 46px 40px;
+    box-shadow:0 24px 60px rgba(45,51,65,.16),0 3px 10px rgba(45,51,65,.07);
+    border:1px solid rgba(168,135,59,.28);
+  }
+  /* engraved inner double rule, like a printed card edge */
+  .card::before{
+    content:"";position:absolute;inset:9px;border-radius:9px;
+    border:1px solid rgba(45,51,65,.10);
+    box-shadow:inset 0 0 0 1px rgba(168,135,59,.12);
+    pointer-events:none;
+  }
+
+  .card-top{
+    display:flex;align-items:center;gap:34px;
+  }
+  .logo{flex:none;width:200px;max-width:42vw;line-height:0;}
+  .logo img,.logo svg{width:100%;height:auto;}
+
+  .ident{flex:1;min-width:0;}
+  .ident .biz{
+    color:var(--gold-deep);letter-spacing:.22em;font-size:12.5px;
+    text-transform:uppercase;font-weight:600;margin-bottom:6px;
+  }
+  .ident h1{
+    font-size:clamp(34px,5.6vw,50px);font-weight:700;color:var(--ink);
+    line-height:1.02;letter-spacing:.3px;
+  }
+  .ident .role{color:var(--muted);font-style:italic;font-size:18px;margin-top:2px;}
+  .contact-row{margin-top:16px;display:flex;flex-direction:column;gap:9px;}
+  .contact-row a{
+    display:inline-flex;align-items:center;gap:11px;
+    color:var(--ink);text-decoration:none;font-size:19px;width:fit-content;
+    transition:color .15s ease;
+  }
+  .contact-row a:hover{color:var(--gold-deep);}
+  .contact-row .ic{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--navy);
+  }
+  .contact-row .ic svg{width:17px;height:17px;stroke:var(--gold-light);fill:none;}
+
+  /* divider like the card's rule */
+  .card-divider{
+    height:1px;margin:26px 0 22px;
+    background:linear-gradient(90deg,transparent,rgba(168,135,59,.55) 12%,rgba(168,135,59,.55) 88%,transparent);
+  }
+
+  /* two-column service bullets, straight off the card */
+  .card-services{
+    list-style:none;display:grid;grid-template-columns:1fr 1fr;
+    gap:12px 34px;margin-bottom:6px;
+  }
+  .card-services li{
+    display:flex;align-items:baseline;gap:12px;
+    font-family:'PT Serif',serif;font-size:20px;color:var(--ink);
+  }
+  .card-services li::before{
+    content:"";flex:none;width:9px;height:9px;border-radius:50%;
+    background:var(--gold);transform:translateY(-2px);
+    box-shadow:0 0 0 3px rgba(168,135,59,.14);
+  }
+
+  .tagline{
+    margin-top:22px;text-align:center;font-family:'PT Serif',serif;
+    font-style:italic;color:var(--navy);font-size:clamp(18px,2.6vw,22px);
+  }
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:22px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    padding:14px 26px;border-radius:8px;font-family:'PT Serif',serif;
+    font-size:18px;font-weight:700;letter-spacing:.2px;
+    transition:transform .16s ease,box-shadow .16s ease,background .16s ease;
+  }
+  .btn svg{width:18px;height:18px;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,51,65,.20);}
+  .btn:active{transform:translateY(0);}
+  .btn-call{background:linear-gradient(180deg,var(--gold-light),var(--gold));color:#241d0e;box-shadow:0 4px 12px rgba(168,135,59,.30);}
+  .btn-call svg{stroke:#241d0e;}
+  .btn-email{background:var(--navy);color:#f3ece0;}
+  .btn-email svg{stroke:var(--gold-light);}
+  .btn-email:hover{background:var(--navy-soft);}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--gold);}
+  .btn-ghost svg{stroke:var(--gold-deep);}
+
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px;border-radius:6px;}
+
+  /* ============ SECTION SHARED ============ */
+  section{padding:62px 0;}
+  .section-head{text-align:center;margin-bottom:40px;}
+  .section-head .eyebrow{color:var(--gold-deep);display:block;margin-bottom:11px;}
+  .section-title{font-size:clamp(28px,4.8vw,40px);color:var(--navy);font-weight:700;line-height:1.05;}
+  .rule{width:60px;height:2px;background:var(--gold);margin:15px auto 0;position:relative;}
+  .rule::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);width:7px;height:7px;background:var(--gold);}
+
+  /* ============ SERVICES ============ */
+  .services{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .service{
+    position:relative;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:26px 24px 24px;
+    box-shadow:0 2px 14px rgba(45,51,65,.05);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;overflow:hidden;
+  }
+  .service::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  .service:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(45,51,65,.14);border-color:var(--gold-light);}
+  .service:hover::before{transform:scaleX(1);}
+  .service .ico{width:48px;height:48px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy),var(--navy-soft));margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(200,168,96,.25);}
+  .service .ico svg{width:26px;height:26px;stroke:var(--gold-light);fill:none;}
+  .service h3{color:var(--navy);font-size:23px;font-weight:700;margin-bottom:5px;}
+  .service p{color:var(--muted);font-size:16px;}
+
+  /* ============ WHY JAKE ============ */
+  .why{background:var(--paper);}
+  .why-inner{max-width:760px;margin:0 auto;text-align:center;}
+  .portrait{
+    width:186px;height:186px;margin:0 auto 26px;position:relative;border-radius:50%;overflow:hidden;
+    background:linear-gradient(160deg,var(--navy),var(--navy-soft));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px rgba(45,51,65,.22),0 0 0 4px var(--card),0 0 0 6px var(--gold);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+  .portrait .initials{font-family:'PT Serif',serif;font-weight:700;font-size:64px;color:var(--gold-light);letter-spacing:2px;}
+  .why .lead{font-family:'PT Serif',serif;font-size:clamp(23px,3.6vw,29px);font-style:italic;color:var(--navy);line-height:1.25;margin:4px 0 22px;}
+  .why p.body{font-size:19px;color:#453f36;margin-bottom:18px;}
+  .signature{font-family:'PT Serif',serif;font-style:italic;font-weight:700;font-size:32px;color:var(--gold-deep);margin-top:8px;}
+  .signature + span{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+
+  /* ============ CONTACT (navy anchor — the roof color) ============ */
+  .contact{position:relative;color:#f3ece0;text-align:center;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#414a5e 0%,var(--navy) 50%,var(--navy-deep) 100%);}
+  .contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,96,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,96,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
+  .contact .wrap{position:relative;z-index:2;}
+  .contact .section-title{color:#fff;}
+  .contact .eyebrow{color:var(--gold-light);}
+  .contact .rule{background:var(--gold-light);}
+  .contact .rule::after{background:var(--gold-light);}
+  .free-est{display:inline-block;margin:24px 0 8px;font-style:italic;color:var(--gold-light);font-size:20px;font-family:'PT Serif',serif;}
+  .contact-lines{margin:6px 0 26px;font-size:18px;color:#e4dece;line-height:2;}
+  .contact-lines a{color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(200,168,96,.35);}
+  .contact-lines a:hover{color:#fff;}
+
+  footer{background:#1c202a;color:#8f8a7f;text-align:center;padding:24px;font-size:14px;line-height:1.7;}
+  footer .fgold{color:var(--gold-light);}
+
+  /* ============ STICKY MOBILE BAR ============ */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;grid-template-columns:1fr 1fr;gap:1px;background:rgba(168,135,59,.4);box-shadow:0 -4px 20px rgba(0,0,0,.22);}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;text-decoration:none;font-family:'PT Serif',serif;font-size:17px;font-weight:700;}
+  .sticky-cta a svg{width:18px;height:18px;}
+  .sticky-cta .s-call{background:var(--gold);color:#241d0e;}
+  .sticky-cta .s-call svg{stroke:#241d0e;}
+  .sticky-cta .s-text{background:var(--navy-deep);color:#f3ece0;}
+  .sticky-cta .s-text svg{stroke:var(--gold-light);}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .card{animation:rise .8s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes rise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+  @media (max-width:720px){
+    .card{padding:34px 24px 30px;}
+    .card-top{flex-direction:column;text-align:center;gap:20px;}
+    .logo{width:180px;max-width:60vw;}
+    .contact-row{align-items:center;}
+    .contact-row a{font-size:18px;}
+  }
+  @media (max-width:640px){
+    body{padding-bottom:60px;}
+    .sticky-cta{display:grid;}
+    section{padding:48px 0;}
+    .card-services{gap:10px 20px;}
+  }
+  @media (max-width:430px){
+    .card-services{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;animation:none !important;}
+    .reveal{opacity:1;transform:none;}
+    .btn:hover,.service:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO / CARD ================= -->
+<header class="hero">
+  <div class="card">
+    <div class="card-top">
+      <div class="logo">
+        <!-- Drop the real logo in as logo.png for a pixel-perfect match; this SVG is the fallback -->
+        <img src="logo.png" alt="Coop's Handyman Services logo — house with CHS tools"
+             onload="this.nextElementSibling.style.display='none'"
+             onerror="this.style.display='none'">
+        <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coop's Handyman Services logo">
+          <!-- roof gable -->
+          <path d="M22 76 L120 20 L218 76 L218 94 L120 44 L22 94 Z" fill="#2d3341"/>
+          <!-- C -->
+          <text x="4" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#a8873b">C</text>
+          <!-- S -->
+          <text x="156" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#a8873b">S</text>
+          <!-- H built from tools -->
+          <!-- crossbar -->
+          <rect x="103" y="120" width="34" height="12" rx="2" fill="#a8873b"/>
+          <!-- screwdriver (left stroke) -->
+          <rect x="94" y="92" width="20" height="30" rx="7" fill="#a8873b"/>
+          <rect x="101" y="120" width="6" height="42" fill="#9a9385"/>
+          <polygon points="101,162 107,162 104,173" fill="#9a9385"/>
+          <!-- saw (right stroke) -->
+          <rect x="126" y="92" width="22" height="18" rx="6" fill="#a8873b"/>
+          <rect x="131" y="110" width="9" height="54" fill="#b7af9d"/>
+          <path d="M140 112 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4" fill="none" stroke="#9a9385" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="ident">
+        <div class="biz">Coop's Handyman Services</div>
+        <h1>Jacob Cooper</h1>
+        <div class="role">Owner &amp; Craftsman</div>
+        <div class="contact-row">
+          <a href="tel:+17402432932">
+            <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            (740) 243-2932
+          </a>
+          <a href="mailto:CoopsHandymanServices1@gmail.com">
+            <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+            CoopsHandymanServices1@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <ul class="card-services">
+      <li>Home Repairs</li>
+      <li>Tree Cleanup</li>
+      <li>Property Maintenance</li>
+      <li>Concrete Repair</li>
+      <li>Fences</li>
+      <li>Welding and More!</li>
+    </ul>
+
+    <div class="tagline">Welding and more — done right, done local.</div>
+
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+17402432932">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call or Text
+      </a>
+      <a class="btn btn-email" href="mailto:CoopsHandymanServices1@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        Email Jake
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SERVICES ================= -->
+<section class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What Jake Can Do</span>
+      <h2 class="section-title">Services</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="service-grid">
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg></div>
+        <h3>Home Repairs</h3>
+        <p>From leaky faucets to drywall and doors — the fixes that keep your house running.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Property Maintenance</h3>
+        <p>Ongoing upkeep to keep your home and yard in great shape year-round.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg></div>
+        <h3>Fences</h3>
+        <p>New fence builds and repairs to secure and finish your property.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg></div>
+        <h3>Tree Cleanup</h3>
+        <p>Fallen limbs and storm debris cleared out and hauled away.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg></div>
+        <h3>Concrete Repair</h3>
+        <p>Cracked walks, steps, and slabs patched and made safe again.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg></div>
+        <h3>Welding &amp; More</h3>
+        <p>Custom metal work, repairs, and whatever else your project needs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY JAKE ================= -->
+<section class="why">
+  <div class="wrap why-inner">
+    <div class="portrait reveal">
+      <img src="jake.jpg" alt="Jacob Cooper, owner of Coop's Handyman Services"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="initials" style="display:none;">JC</span>
+    </div>
+    <div class="section-head reveal" style="margin-bottom:22px;">
+      <span class="eyebrow">Why Call Jake</span>
+      <h2 class="section-title">One neighbor for the whole to-do list</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead reveal">Honest work, a fair price, and the same face every time.</p>
+    <p class="body reveal">Jacob Cooper takes pride in honest work and a fair price. No job is too small, and you'll always deal directly with Jake — not a call center. He shows up when he says he will, treats your home like his own, and doesn't consider the job done until you're happy with it.</p>
+    <p class="body reveal">Give him a call or text and he'll take a look at what you need.</p>
+    <div class="reveal">
+      <div class="signature">Jacob Cooper</div>
+      <span>Owner &amp; Craftsman</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">Get a Free Estimate</h2>
+      <div class="rule"></div>
+    </div>
+    <span class="free-est reveal">Free estimates — reach out anytime.</span>
+    <div class="contact-lines reveal">
+      Call or text: <a href="tel:+17402432932">(740) 243-2932</a><br>
+      Email: <a href="mailto:CoopsHandymanServices1@gmail.com">CoopsHandymanServices1@gmail.com</a>
+    </div>
+    <div class="cta-row reveal">
+      <a class="btn btn-call" href="tel:+17402432932">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call or Text Now
+      </a>
+      <a class="btn btn-ghost" style="color:#f3ece0;border-color:var(--gold-light)" href="mailto:CoopsHandymanServices1@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        Send an Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> <span class="fgold">Coop's Handyman Services</span> · Jacob Cooper · (740) 243-2932
+</footer>
+
+<!-- ================= STICKY MOBILE BAR ================= -->
+<nav class="sticky-cta" aria-label="Quick contact">
+  <a class="s-call" href="tel:+17402432932">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Call Jake
+  </a>
+  <a class="s-text" href="sms:+17402432932">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg>
+    Text Jake
+  </a>
+</nav>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+</body>
+</html>
