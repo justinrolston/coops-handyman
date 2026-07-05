@@ -17,19 +17,19 @@
 
 <style>
   :root{
-    --navy:#2d3341;        /* roof navy from the card */
-    --navy-soft:#3a4152;
-    --navy-deep:#232833;
-    --gold:#a8873b;        /* CHS gold from the card  */
-    --gold-deep:#8f7330;
-    --gold-light:#c2a355;
-    --steel:#9a9385;       /* tool metal              */
+    --navy:#3c4046;        /* charcoal grey — the roof */
+    --navy-soft:#4a4f57;
+    --navy-deep:#2e3237;
+    --gold:#b8944e;        /* warm tan — the C         */
+    --gold-deep:#977536;
+    --gold-light:#cfaa63;
+    --steel:#a9a9a9;       /* logo silver              */
     --card:#ffffff;
-    --paper:#f4eee3;       /* warm backdrop           */
-    --paper-2:#ece3d4;
-    --ink:#211f1b;         /* near-black card text    */
-    --muted:#6f685c;
-    --line:#e7dcc9;
+    --paper:#f2ede2;       /* soft greige backdrop     */
+    --paper-2:#e7ddca;
+    --ink:#23211d;         /* near-black text          */
+    --muted:#6e675b;
+    --line:#e6ddca;
   }
 
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -186,8 +186,26 @@
   .service h3{color:var(--navy);font-size:23px;font-weight:700;margin-bottom:5px;}
   .service p{color:var(--muted);font-size:16px;}
 
+  /* ============ RECENT WORK ============ */
+  .work{background:var(--paper);}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .shot{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;
+    background:linear-gradient(150deg,var(--paper-2),#d8ccb4);
+    border:1px solid var(--line);box-shadow:0 3px 14px rgba(60,64,70,.09);}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:2;transition:transform .45s ease;}
+  .shot:hover img{transform:scale(1.06);}
+  .shot figcaption{position:absolute;left:0;right:0;bottom:0;z-index:3;
+    padding:26px 15px 11px;color:#fff;font-family:'PT Serif',serif;font-size:15px;letter-spacing:.02em;
+    background:linear-gradient(transparent,rgba(35,33,29,.72));opacity:0;transition:opacity .25s ease;}
+  .shot:hover figcaption{opacity:1;}
+  .ph-label{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:9px;padding:12px;text-align:center;
+    color:var(--muted);font-family:'PT Serif',serif;font-size:15px;}
+  .ph-label svg{width:30px;height:30px;stroke:var(--gold-deep);opacity:.75;fill:none;}
+  .work-note{text-align:center;margin-top:26px;color:var(--muted);font-style:italic;font-size:16px;}
+
   /* ============ WHY JAKE ============ */
-  .why{background:var(--paper);}
+  .why{background:var(--card);}
   .why-inner{max-width:760px;margin:0 auto;text-align:center;}
   .portrait{
     width:186px;height:186px;margin:0 auto 26px;position:relative;border-radius:50%;overflow:hidden;
@@ -203,7 +221,7 @@
   .signature + span{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
 
   /* ============ CONTACT (navy anchor — the roof color) ============ */
-  .contact{position:relative;color:#f3ece0;text-align:center;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#414a5e 0%,var(--navy) 50%,var(--navy-deep) 100%);}
+  .contact{position:relative;color:#f3ece0;text-align:center;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#4c515a 0%,var(--navy) 50%,var(--navy-deep) 100%);}
   .contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,96,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,96,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
   .contact .wrap{position:relative;z-index:2;}
   .contact .section-title{color:#fff;}
@@ -215,7 +233,7 @@
   .contact-lines a{color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(200,168,96,.35);}
   .contact-lines a:hover{color:#fff;}
 
-  footer{background:#1c202a;color:#8f8a7f;text-align:center;padding:24px;font-size:14px;line-height:1.7;}
+  footer{background:#26282c;color:#948f83;text-align:center;padding:24px;font-size:14px;line-height:1.7;}
   footer .fgold{color:var(--gold-light);}
 
   /* ============ STICKY MOBILE BAR ============ */
@@ -270,20 +288,20 @@
              onerror="this.style.display='none'">
         <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coop's Handyman Services logo">
           <!-- roof gable -->
-          <path d="M22 76 L120 20 L218 76 L218 94 L120 44 L22 94 Z" fill="#2d3341"/>
+          <path d="M22 76 L120 20 L218 76 L218 94 L120 44 L22 94 Z" fill="#3c4046"/>
           <!-- C -->
-          <text x="4" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#a8873b">C</text>
+          <text x="4" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#b8944e">C</text>
           <!-- S -->
-          <text x="156" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#a8873b">S</text>
+          <text x="156" y="176" font-family="'PT Serif',Georgia,serif" font-weight="700" font-size="112" fill="#b8944e">S</text>
           <!-- H built from tools -->
           <!-- crossbar -->
-          <rect x="103" y="120" width="34" height="12" rx="2" fill="#a8873b"/>
+          <rect x="103" y="120" width="34" height="12" rx="2" fill="#b8944e"/>
           <!-- screwdriver (left stroke) -->
-          <rect x="94" y="92" width="20" height="30" rx="7" fill="#a8873b"/>
+          <rect x="94" y="92" width="20" height="30" rx="7" fill="#b8944e"/>
           <rect x="101" y="120" width="6" height="42" fill="#9a9385"/>
           <polygon points="101,162 107,162 104,173" fill="#9a9385"/>
           <!-- saw (right stroke) -->
-          <rect x="126" y="92" width="22" height="18" rx="6" fill="#a8873b"/>
+          <rect x="126" y="92" width="22" height="18" rx="6" fill="#b8944e"/>
           <rect x="131" y="110" width="9" height="54" fill="#b7af9d"/>
           <path d="M140 112 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4 l7 4 l-7 4" fill="none" stroke="#9a9385" stroke-width="2"/>
         </svg>
@@ -314,10 +332,9 @@
       <li>Property Maintenance</li>
       <li>Concrete Repair</li>
       <li>Fences</li>
+      <li>Deck Repair</li>
       <li>Welding and More!</li>
     </ul>
-
-    <div class="tagline">Welding and more — done right, done local.</div>
 
     <div class="cta-row">
       <a class="btn btn-call" href="tel:+17402432932">
@@ -345,40 +362,97 @@
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg></div>
         <h3>Home Repairs</h3>
-        <p>From leaky faucets to drywall and doors — the fixes that keep your house running.</p>
+        <p>From leaky faucets to drywall and doors, I handle the fixes that keep your house running.</p>
       </div>
 
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
         <h3>Property Maintenance</h3>
-        <p>Ongoing upkeep to keep your home and yard in great shape year-round.</p>
+        <p>I keep your home and yard in great shape year-round with steady, reliable upkeep.</p>
       </div>
 
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg></div>
         <h3>Fences</h3>
-        <p>New fence builds and repairs to secure and finish your property.</p>
+        <p>I build new fences and repair old ones to secure and finish your property.</p>
       </div>
 
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg></div>
         <h3>Tree Cleanup</h3>
-        <p>Fallen limbs and storm debris cleared out and hauled away.</p>
+        <p>I clear out fallen limbs and storm debris and haul it all away.</p>
       </div>
 
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg></div>
         <h3>Concrete Repair</h3>
-        <p>Cracked walks, steps, and slabs patched and made safe again.</p>
+        <p>I patch cracked walks, steps, and slabs and make them safe to use again.</p>
+      </div>
+
+      <div class="service reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg></div>
+        <h3>Deck Repair</h3>
+        <p>I repair and rebuild decks — boards, railings, and steps — so yours is solid and safe to enjoy again.</p>
       </div>
 
       <div class="service reveal">
         <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg></div>
         <h3>Welding &amp; More</h3>
-        <p>Custom metal work, repairs, and whatever else your project needs.</p>
+        <p>I take on custom metal work, repairs, and whatever else your project happens to need.</p>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ================= RECENT WORK ================= -->
+<section class="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recent Work</span>
+      <h2 class="section-title">A Look at the Work</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery">
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg>Deck Repair</span>
+        <img src="work-1.jpg" alt="Deck repair and rebuild" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Deck Repair</figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg>Fence Build</span>
+        <img src="work-2.jpg" alt="Fence build and repair" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fence Build</figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg>Concrete Work</span>
+        <img src="work-3.jpg" alt="Concrete repair" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Concrete Work</figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg>Home Repair</span>
+        <img src="work-4.jpg" alt="Home repair project" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Home Repair</figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg>Tree Cleanup</span>
+        <img src="work-5.jpg" alt="Tree and storm cleanup" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Tree Cleanup</figcaption>
+      </figure>
+
+      <figure class="shot reveal">
+        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg>Welding</span>
+        <img src="work-6.jpg" alt="Welding and custom metal work" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Welding</figcaption>
+      </figure>
+
+    </div>
+    <p class="work-note reveal">Photos from my own jobs are coming soon — check back to see the work.</p>
   </div>
 </section>
 
@@ -396,8 +470,8 @@
       <div class="rule"></div>
     </div>
     <p class="lead reveal">Honest work, a fair price, and the same face every time.</p>
-    <p class="body reveal">Jacob Cooper takes pride in honest work and a fair price. No job is too small, and you'll always deal directly with Jake — not a call center. He shows up when he says he will, treats your home like his own, and doesn't consider the job done until you're happy with it.</p>
-    <p class="body reveal">Give him a call or text and he'll take a look at what you need.</p>
+    <p class="body reveal">I take pride in honest work and a fair price. No job is too small, and you'll always deal directly with me — not a call center. I show up when I say I will, treat your home like my own, and don't consider the job done until you're happy with it.</p>
+    <p class="body reveal">Give me a call or text and I'll come take a look at what you need.</p>
     <div class="reveal">
       <div class="signature">Jacob Cooper</div>
       <span>Owner &amp; Craftsman</span>
