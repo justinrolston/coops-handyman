@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -21,7 +21,7 @@
     --navy-soft:#4a4f57;
     --navy-deep:#2e3237;
     --gold:#b8944e;        /* warm tan — the C         */
-    --gold-deep:#977536;
+    --gold-deep:#7d5f28;   /* deepened for WCAG AA on white + greige */
     --gold-light:#cfaa63;
     --steel:#a9a9a9;       /* logo silver              */
     --card:#ffffff;
@@ -36,7 +36,7 @@
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 
   body{
-    font-family:'EB Garamond','Georgia',serif;
+    font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
     color:var(--ink);
     background:var(--paper);
     line-height:1.62;
@@ -48,7 +48,7 @@
   h1,h2,h3,.serif{font-family:'PT Serif','Georgia',serif;}
 
   .eyebrow{
-    font-family:'EB Garamond',serif;text-transform:uppercase;
+    font-family:'Source Sans 3',sans-serif;text-transform:uppercase;
     letter-spacing:.32em;font-size:12px;font-weight:600;
   }
 
@@ -238,7 +238,7 @@
   footer .fb-link{display:inline-flex;align-items:center;gap:7px;color:var(--gold-light);text-decoration:none;font-size:15px;margin-bottom:11px;transition:color .15s ease;}
   footer .fb-link svg{width:18px;height:18px;fill:var(--gold-light);}
   footer .fb-link:hover{color:#fff;}
-  footer .powered-by{margin-top:9px;font-size:12px;opacity:.65;}
+  footer .powered-by{margin-top:9px;font-size:12px;color:#9e9789;}
   footer .powered-by a{color:var(--gold-light);text-decoration:none;}
   footer .powered-by a:hover{color:#fff;text-decoration:underline;}
 
@@ -252,8 +252,9 @@
   .sticky-cta .s-text svg{stroke:var(--gold-light);}
 
   /* ============ REVEAL ============ */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
-  .reveal.in{opacity:1;transform:none;}
+  .reveal{transition:opacity .7s ease,transform .7s ease;}
+  .js .reveal{opacity:0;transform:translateY(22px);}
+  .js .reveal.in{opacity:1;transform:none;}
   .card{animation:rise .8s cubic-bezier(.2,.7,.2,1) both;}
   @keyframes rise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
 
@@ -270,8 +271,15 @@
     section{padding:48px 0;}
     .card-services{gap:10px 20px;}
   }
+  @media (max-width:560px){
+    .gallery{grid-template-columns:1fr 1fr;gap:12px;}
+  }
   @media (max-width:430px){
     .card-services{grid-template-columns:1fr;}
+  }
+  /* touch devices can't hover — keep gallery captions visible */
+  @media (hover:none){
+    .shot figcaption{opacity:1;}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
@@ -280,6 +288,7 @@
     .btn:hover,.service:hover{transform:none;}
   }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -319,15 +328,15 @@
         <div class="role">Owner &amp; Craftsman</div>
         <div class="contact-row">
           <a href="tel:+17402432932">
-            <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
             (740) 243-2932
           </a>
           <a href="mailto:CoopsHandymanServices1@gmail.com">
-            <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+            <span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
             CoopsHandymanServices1@gmail.com
           </a>
           <a href="https://www.facebook.com/profile.php?id=61566256933038" target="_blank" rel="noopener">
-            <span class="ic"><svg viewBox="0 0 24 24" style="fill:var(--gold-light);stroke:none"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></span>
+            <span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24" style="fill:var(--gold-light);stroke:none"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></span>
             Find me on Facebook
           </a>
         </div>
@@ -348,11 +357,11 @@
 
     <div class="cta-row">
       <a class="btn btn-call" href="tel:+17402432932">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
         Call or Text
       </a>
       <a class="btn btn-email" href="mailto:CoopsHandymanServices1@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
         Email Me
       </a>
     </div>
@@ -370,43 +379,43 @@
     <div class="service-grid">
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg></div>
         <h3>Home Repairs</h3>
         <p>From leaky faucets to drywall and doors, I handle the fixes that keep your house running.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
         <h3>Property Maintenance</h3>
         <p>I keep your home and yard in great shape year-round with steady, reliable upkeep.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg></div>
         <h3>Fences</h3>
         <p>I build new fences and repair old ones to secure and finish your property.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg></div>
         <h3>Tree Cleanup</h3>
         <p>I clear out fallen limbs and storm debris and haul it all away.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg></div>
         <h3>Concrete Repair</h3>
         <p>I patch cracked walks, steps, and slabs and make them safe to use again.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg></div>
         <h3>Deck Repair</h3>
-        <p>I repair and rebuild decks — boards, railings, and steps — so yours is solid and safe to enjoy again.</p>
+        <p>I repair and rebuild decks, from boards and railings to steps, so yours is solid and safe to enjoy again.</p>
       </div>
 
       <div class="service reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg></div>
+        <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg></div>
         <h3>Welding &amp; More</h3>
         <p>I take on custom metal work, repairs, and whatever else your project happens to need.</p>
       </div>
@@ -426,43 +435,43 @@
     <div class="gallery">
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg>Mini-Split Install</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 7V4M17 7V4M3 11h18M3 15h18M3 19h18"/></svg>Mini-Split Install</span>
         <img src="work-1.jpg" alt="Ductless mini-split system installed on a home exterior" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Mini-Split Install</figcaption>
       </figure>
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg>Chimney &amp; Masonry</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12M2 13h20M2 17h20"/></svg>Chimney &amp; Masonry</span>
         <img src="work-2.jpg" alt="Rebuilt brick chimney with a new concrete crown" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Chimney &amp; Masonry</figcaption>
       </figure>
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg>Walkways &amp; Landscaping</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20v-6h6v6M11 14V9h8v11M7 17h2M15 12h1M15 16h1"/></svg>Walkways &amp; Landscaping</span>
         <img src="work-3.jpg" alt="Finished walkway and fresh landscaping at a home entrance" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Walkways &amp; Landscaping</figcaption>
       </figure>
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg>Custom Carpentry</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-.6-.6-2.1 2.6-2.6Z"/></svg>Custom Carpentry</span>
         <img src="work-4.jpg" alt="Custom wood workbench built along a garage wall" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Custom Carpentry</figcaption>
       </figure>
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg>Fence Build</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6M12 16c-3.5 0-6-2.4-6-5.5C6 7 8 5 8 5s1 1.5 2.5 1.5C10.5 4 12 2 12 2s1.5 2 1.5 4.5C15 6.5 16 5 16 5s2 2 2 5.5c0 3.1-2.5 5.5-6 5.5Z"/></svg>Fence Build</span>
         <img src="work-5.jpg" alt="New wood and wire fence in a backyard" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Fence Build</figcaption>
       </figure>
 
       <figure class="shot reveal">
-        <span class="ph-label"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg>Garage Renovation</span>
+        <span class="ph-label"><svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 13 11M13 11l2.5-2.5M15.5 8.5 20 4M13 11l-2 5-3-3 5-2ZM17 3l4 4"/></svg>Garage Renovation</span>
         <img src="work-6.jpg" alt="Renovated garage interior with a finished concrete floor" loading="lazy" onerror="this.style.display='none'">
         <figcaption>Garage Renovation</figcaption>
       </figure>
 
     </div>
-    <p class="work-note reveal">A few of my recent projects — I'm always adding more.</p>
+    <p class="work-note reveal">A few of my recent projects, and I'm always adding more.</p>
   </div>
 </section>
 
@@ -480,7 +489,7 @@
       <div class="rule"></div>
     </div>
     <p class="lead reveal">Honest work, a fair price, and the same face every time.</p>
-    <p class="body reveal">I take pride in honest work and a fair price. No job is too small, and you'll always deal directly with me — not a call center. I show up when I say I will, treat your home like my own, and don't consider the job done until you're happy with it.</p>
+    <p class="body reveal">I take pride in honest work and a fair price. No job is too small, and you'll always deal directly with me, not a call center. I show up when I say I will, treat your home like my own, and don't consider the job done until you're happy with it.</p>
     <p class="body reveal">Give me a call or text and I'll come take a look at what you need.</p>
     <div class="reveal">
       <div class="signature">Jacob Cooper</div>
@@ -497,7 +506,7 @@
       <h2 class="section-title">Get a Free Estimate</h2>
       <div class="rule"></div>
     </div>
-    <span class="free-est reveal">Free estimates — reach out anytime.</span>
+    <span class="free-est reveal">Free estimates. Reach out anytime.</span>
     <div class="contact-lines reveal">
       Call or text: <a href="tel:+17402432932">(740) 243-2932</a><br>
       Email: <a href="mailto:CoopsHandymanServices1@gmail.com">CoopsHandymanServices1@gmail.com</a><br>
@@ -505,11 +514,11 @@
     </div>
     <div class="cta-row reveal">
       <a class="btn btn-call" href="tel:+17402432932">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
         Call or Text Now
       </a>
       <a class="btn btn-ghost" style="color:#f3ece0;border-color:var(--gold-light)" href="mailto:CoopsHandymanServices1@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
         Send an Email
       </a>
     </div>
@@ -528,11 +537,11 @@
 <!-- ================= STICKY MOBILE BAR ================= -->
 <nav class="sticky-cta" aria-label="Quick contact">
   <a class="s-call" href="tel:+17402432932">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
     Call Me
   </a>
   <a class="s-text" href="sms:+17402432932">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg>
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg>
     Text Me
   </a>
 </nav>
