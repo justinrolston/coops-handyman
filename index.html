@@ -562,16 +562,18 @@
   }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  /* ===== Google Ads call-conversion tracking =====
-     Fires a conversion when a visitor taps any "Call" (tel:) link.
-     TODO: paste the conversion label from Google Ads below (the part AFTER the
-     slash in AW-18354548469/XXXX). Until it's set, this stays a harmless no-op. */
-  var AW_CALL_LABEL = ''; // e.g. 'AbC-D_efG-h12_34-567'
+  /* ===== Google Ads call/text conversion tracking =====
+     Fires a conversion when a visitor taps any Call (tel:) or Text (sms:) link. */
+  var AW_CALL_LABEL = 'IPJ_CKWNz9kcEPXdkLBE';
   if (AW_CALL_LABEL) {
     document.addEventListener('click', function(e){
-      var link = e.target.closest('a[href^="tel:"]');
+      var link = e.target.closest('a[href^="tel:"], a[href^="sms:"]');
       if (link && typeof gtag === 'function') {
-        gtag('event', 'conversion', {'send_to': 'AW-18354548469/' + AW_CALL_LABEL});
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18354548469/' + AW_CALL_LABEL,
+          'value': 1.0,
+          'currency': 'USD'
+        });
       }
     });
   }
