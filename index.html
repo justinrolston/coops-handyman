@@ -229,43 +229,22 @@
   .signature{font-family:'PT Serif',serif;font-style:italic;font-weight:700;font-size:32px;color:var(--gold-deep);margin-top:8px;}
   .signature + span{display:block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
 
-  /* ============ REVIEWS (badge plaque under the hero) ============ */
-  .reviews{background:var(--paper);padding:36px 0 40px;}
-  .reviews-inner{max-width:700px;margin:0 auto;text-align:center;}
-  .review-badge{
-    position:relative;max-width:520px;margin:0 auto;padding:24px 30px 22px;
-    background:radial-gradient(130% 150% at 50% 0%, var(--navy) 0%, var(--navy-deep) 100%);
-    border-radius:14px;
-    box-shadow:0 14px 34px rgba(45,51,65,.24),0 2px 8px rgba(45,51,65,.12);
+  /* ============ REVIEW BAND (flush footer of the business card) ============ */
+  .card-reviews{
+    display:flex;align-items:center;justify-content:center;gap:8px 15px;flex-wrap:wrap;
+    margin:32px -46px -40px;padding:15px 46px;
+    background:rgba(184,148,78,.10);
+    border-top:1px solid rgba(168,135,59,.28);
+    border-radius:0 0 13px 13px;
   }
-  /* engraved inner rule, echoing the business card edge */
-  .review-badge::before{
-    content:"";position:absolute;inset:7px;border-radius:9px;
-    border:1px solid rgba(207,170,99,.30);pointer-events:none;
-  }
-  .rb-main{display:flex;align-items:center;justify-content:center;gap:18px;}
-  .rb-num{font-family:'PT Serif',serif;font-size:52px;font-weight:700;
-    color:var(--gold-light);line-height:1;letter-spacing:.5px;}
-  .rb-right{text-align:left;}
-  .stars{display:flex;gap:3px;margin-bottom:4px;}
-  .stars svg{width:22px;height:22px;fill:var(--gold-light);}
-  .rb-label{display:block;color:#d8d3c8;font-size:15px;line-height:1.35;}
-  .review-link{display:inline-block;margin-top:15px;color:var(--gold-light);
-    font-size:15px;text-decoration:none;border-bottom:1px solid rgba(207,170,99,.45);}
-  .review-link:hover{color:#fff;border-bottom-color:#fff;}
-  @media (max-width:420px){
-    .review-badge{padding:22px 20px 20px;}
-    .rb-main{gap:14px;}
-    .rb-num{font-size:44px;}
-    .stars svg{width:19px;height:19px;}
-    .rb-label{font-size:14px;}
-  }
-  /* quote styles, ready for when Jake sends real reviews */
-  .quotes{display:grid;gap:24px;margin:26px 0 2px;}
-  .quote{font-family:'PT Serif',serif;font-style:italic;font-size:19px;
-    color:var(--ink);line-height:1.5;text-wrap:pretty;}
-  .quote cite{display:block;margin-top:8px;font-family:'Source Sans 3',sans-serif;
-    font-style:normal;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .card-reviews .stars{display:inline-flex;gap:3px;}
+  .card-reviews .stars svg{width:19px;height:19px;fill:#a17b36;}
+  .cr-text{font-family:'PT Serif',serif;font-size:16px;color:var(--navy);}
+  .cr-text b{font-size:21px;font-weight:700;}
+  .review-link{color:var(--gold-deep);font-size:15px;text-decoration:none;
+    border-bottom:1px solid rgba(125,95,40,.42);}
+  .review-link:hover{color:var(--ink);border-bottom-color:var(--ink);}
+
   footer .review-cta{margin-top:11px;}
   footer .review-cta a{color:var(--gold-light);text-decoration:none;font-size:15px;
     display:inline-flex;align-items:center;gap:7px;}
@@ -316,6 +295,8 @@
     .logo{width:180px;max-width:60vw;}
     .contact-row{align-items:center;}
     .contact-row a{font-size:18px;}
+    .card-reviews{margin:26px -24px -30px;padding:14px 24px;gap:6px 12px;}
+    .cr-text{font-size:15px;}
   }
   @media (max-width:640px){
     body{padding-bottom:60px;}
@@ -417,40 +398,20 @@
         Email Me
       </a>
     </div>
-  </div>
-</header>
 
-<!-- ================= REVIEWS ================= -->
-<section class="reviews">
-  <div class="wrap reviews-inner">
-    <div class="review-badge reveal">
-      <div class="rb-main">
-        <span class="rb-num">5.0</span>
-        <span class="rb-right">
-          <span class="stars" role="img" aria-label="Rated 5.0 out of 5 stars on Google">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
-          </span>
-          <span class="rb-label">Rated by my customers<br>on Google</span>
-        </span>
-      </div>
+    <div class="card-reviews">
+      <span class="stars" role="img" aria-label="Rated 5.0 out of 5 stars on Google">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+      </span>
+      <span class="cr-text"><b>5.0</b> rated by my customers on Google</span>
       <a class="review-link" href="https://maps.google.com/?cid=11254710413182575635" target="_blank" rel="noopener">Read my reviews</a>
     </div>
-
-    <!-- TODO: paste 2-3 real reviews from Jake here, then delete this comment.
-         Keep the exact markup below, one <blockquote> per review:
-    <div class="quotes reveal">
-      <blockquote class="quote">
-        "Review text goes here, word for word from Google."
-        <cite>First name, Last initial.</cite>
-      </blockquote>
-    </div>
-    -->
   </div>
-</section>
+</header>
 
 <!-- ================= SERVICES ================= -->
 <section class="services">
